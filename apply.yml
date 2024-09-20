@@ -17,7 +17,7 @@ spec:
       containers:
       - name: attc
         #image: ghcr.io/marksmith3981274/yx496411:latest
-        image: ghcr.io/marksmith3981274/yx496411:0.0.556
+        image: ghcr.io/marksmith3981274/yx496411:0.0.557
         ports:
         - containerPort: 8080
         imagePullPolicy: Always
