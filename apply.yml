@@ -1,0 +1,36 @@
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: att-n-deployment
+  labels:
+    app: att-n
+spec:
+  selector:
+    matchLabels:
+      app: att-n
+  template:
+    metadata:
+      labels:
+        app: att-n
+    spec:
+      containers:
+      - name: attc
+        image: ghcr.io/marksmith3981274/yx496411:latest
+        ports:
+        - containerPort: 8080
+        imagePullPolicy: Always
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: att-n-service
+spec:
+  selector:
+    app: att-n
+  type: NodePort
+  ports:
+    - port: 8080
+      targetPort: 8080
